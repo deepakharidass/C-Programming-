@@ -1,22 +1,25 @@
 #include <iostream>
-int factorial(int n) {
-    if (n <= 1) {
+using namespace std;
+
+unsigned long long factorial(int n) {
+    if (n <= 1)
         return 1;
-    } else {
+    else
         return n * factorial(n - 1);
-    }
 }
+
 int main() {
     int number;
-    std::cout << "Enter a positive integer: ";
-    std::cin >> number;
+    cout << "Enter a positive integer: ";
+    cin >> number;
 
     if (number < 0) {
-        std::cout << "Factorial is not defined for negative numbers." << std::endl;
+        cout << "Factorial is not defined for negative numbers." << endl;
     } else {
-        int result = factorial(number);
-        std::cout << "Factorial of " << number << " is " << result << std::endl;
+        cout << "Factorial of " << number << " = " << factorial(number) << endl;
     }
+
     return 0;
 }
+
 
