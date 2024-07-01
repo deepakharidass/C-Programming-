@@ -1,22 +1,25 @@
 #include <iostream>
 #include <string>
-std::string reverseString(const std::string& str) {
-    std::string reversedStr = str;
+using namespace std;
+
+// Function to reverse a string
+string reverseString(const string &str) {
+    string reversedStr = str; // Make a copy of the original string
     int n = reversedStr.length();
+
     for (int i = 0; i < n / 2; ++i) {
-        std::swap(reversedStr[i], reversedStr[n - i - 1]);
+        swap(reversedStr[i], reversedStr[n - i - 1]);
     }
     return reversedStr;
 }
 
 int main() {
-    std::string inputString;
-    std::cout << "Enter a string: ";
-    std::getline(std::cin, inputString);
+    string input;
+    cout << "Enter a string: ";
+    getline(cin, input);
 
-    std::string reversedString = reverseString(inputString);
-    std::cout << "Reversed string: " << reversedString << std::endl;
+    string reversed = reverseString(input);
+    cout << "Reversed string: " << reversed << endl;
 
     return 0;
 }
-
